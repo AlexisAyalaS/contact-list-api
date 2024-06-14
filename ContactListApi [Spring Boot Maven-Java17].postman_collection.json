@@ -1,0 +1,324 @@
+{
+	"info": {
+		"_postman_id": "2dbeffb6-3e73-4f97-9955-530b05ae9172",
+		"name": "ContactListApi [Spring Boot Maven-Java17]",
+		"description": "SpringBoot API with Java 17 Maven\n\nLombok\n\nH2 Database",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3186064"
+	},
+	"item": [
+		{
+			"name": "GetContacts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL_DEV}}/api/contacts",
+					"host": [
+						"{{BASE_URL_DEV}}"
+					],
+					"path": [
+						"api",
+						"contacts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Successful Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL_DEV}}/api/contacts",
+							"host": [
+								"{{BASE_URL_DEV}}"
+							],
+							"path": [
+								"api",
+								"contacts"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"'Alexis'\",\n        \"email\": \"alexis@email.com\",\n        \"createdAt\": \"2024-05-16T16:17:11.809067\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"Juan\",\n        \"email\": \"juan@email.com\",\n        \"createdAt\": \"2024-05-16T16:17:11.809067\"\n    },\n    {\n        \"id\": 3,\n        \"name\": \"Pedro\",\n        \"email\": \"pedro@email.com\",\n        \"createdAt\": \"2024-05-16T16:17:11.809067\"\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Marcela\",\n        \"email\": \"marcela@email.com\",\n        \"createdAt\": \"2024-05-16T16:17:11.809067\"\n    },\n    {\n        \"id\": 5,\n        \"name\": \"Francisco\",\n        \"email\": \"francisco@email.com\",\n        \"createdAt\": \"2024-05-16T16:17:11.809067\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GetContact",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL_DEV}}/api/contacts/1",
+					"host": [
+						"{{BASE_URL_DEV}}"
+					],
+					"path": [
+						"api",
+						"contacts",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Successful Response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL_DEV}}/api/contacts/1",
+							"host": [
+								"{{BASE_URL_DEV}}"
+							],
+							"path": [
+								"api",
+								"contacts",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"'Alexis'\",\n    \"email\": \"alexis@email.com\",\n    \"createdAt\": \"2024-05-16T16:17:11.809067\"\n}"
+				}
+			]
+		},
+		{
+			"name": "createContact",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"elisita@gmail.com\",\r\n    \"name\": \"elisita\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL_DEV}}/api/contacts",
+					"host": [
+						"{{BASE_URL_DEV}}"
+					],
+					"path": [
+						"api",
+						"contacts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Successful Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"elisita@gmail.com\",\r\n    \"name\": \"elisita\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL_DEV}}/api/contacts",
+							"host": [
+								"{{BASE_URL_DEV}}"
+							],
+							"path": [
+								"api",
+								"contacts"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 6,\n    \"name\": \"elisita\",\n    \"email\": \"elisita@gmail.com\",\n    \"createdAt\": \"2024-05-16T16:20:13.9125109\"\n}"
+				}
+			]
+		},
+		{
+			"name": "updateContact",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"elisita@gmail.com\",\r\n    \"name\": \"elisita\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL_DEV}}/api/contacts/1",
+					"host": [
+						"{{BASE_URL_DEV}}"
+					],
+					"path": [
+						"api",
+						"contacts",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Successful Response",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"elisita@gmail.com\",\r\n    \"name\": \"elisita\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL_DEV}}/api/contacts/1",
+							"host": [
+								"{{BASE_URL_DEV}}"
+							],
+							"path": [
+								"api",
+								"contacts",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"elisita\",\n    \"email\": \"elisita@gmail.com\",\n    \"createdAt\": \"2024-05-16T16:17:11.809067\"\n}"
+				}
+			]
+		},
+		{
+			"name": "deleteContact",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL_DEV}}/api/contacts/2",
+					"host": [
+						"{{BASE_URL_DEV}}"
+					],
+					"path": [
+						"api",
+						"contacts",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Successful Response",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL_DEV}}/api/contacts/2",
+							"host": [
+								"{{BASE_URL_DEV}}"
+							],
+							"path": [
+								"api",
+								"contacts",
+								"2"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL_DEV",
+			"value": "localhost:8080",
+			"type": "string"
+		}
+	]
+}
